@@ -23,7 +23,7 @@ jquery功能效果
 
 滚动放大：https://15234477664.github.io/jquery-effect/滚动放大/index
 
-点名系统：https://15234477664.github.io/jquery-effect/点名系统
+点名系统：https://15234477664.github.io/jquery-effect/点名系统/on
 
 翻页（好用）：https://15234477664.github.io/jquery-effect/翻页（好用）
 
