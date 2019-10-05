@@ -29,7 +29,7 @@ jquery功能效果
 
 表格：https://15234477664.github.io/jquery-effect/表格
 
-表格事件：https://15234477664.github.io/jquery-effect/表格事件
+表格事件：https://15234477664.github.io/jquery-effect/表格事件/table
 
 计算器：https://15234477664.github.io/jquery-effect/计算器
 
@@ -37,6 +37,6 @@ jquery功能效果
 
 选项卡函数包装：https://15234477664.github.io/jquery-effect/选项卡函数包装
 
-钟表：https://15234477664.github.io/jquery-effect/钟表
+钟表：https://15234477664.github.io/jquery-effect/钟表/color
 
 顶部导航切换效果：https://15234477664.github.io/jquery-effect/顶部导航切换效果
