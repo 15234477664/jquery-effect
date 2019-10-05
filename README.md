@@ -7,6 +7,8 @@ jquery功能效果
 
 三级联动2：https://15234477664.github.io/jquery-effect/三级联动2
 
+个性导航：https://15234477664.github.io/jquery-effect/个性导航
+
 表格：https://15234477664.github.io/jquery-effect/表格
 
 表格事件：https://15234477664.github.io/jquery-effect/表格事件
@@ -16,8 +18,6 @@ jquery功能效果
 顶部导航切换效果：https://15234477664.github.io/jquery-effect/顶部导航切换效果
 
 翻页（好用）：https://15234477664.github.io/jquery-effect/翻页（好用）
-
-个性导航：https://15234477664.github.io/jquery-effect/个性导航
 
 滚动放大：https://15234477664.github.io/jquery-effect/滚动放大
 
