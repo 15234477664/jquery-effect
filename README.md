@@ -21,7 +21,7 @@ jquery功能效果
 
 时间轴轮播：https://15234477664.github.io/jquery-effect/时间轴轮播
 
-滚动放大：https://15234477664.github.io/jquery-effect/滚动放大
+滚动放大：https://15234477664.github.io/jquery-effect/滚动放大/index
 
 点名系统：https://15234477664.github.io/jquery-effect/点名系统
 
