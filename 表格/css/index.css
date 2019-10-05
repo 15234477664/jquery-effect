@@ -1,0 +1,99 @@
+	 *{
+		padding:0;
+		margin:0;
+		list-style: none;
+	} 
+	.box{
+		width: 1000px;
+		height: auto;
+		margin:0 auto;
+		text-align: center;
+		border-collapse: collapse;
+
+	}
+	.adddel_box{
+		width: 100%;
+		height: 30px;
+		/*background: gold;*/
+		border-top: 1px solid #000;
+		border-right: 1px solid #000;
+		box-sizing: border-box;
+	}
+	.add_btnbox{
+		width:16.5%;
+		height: 100%;
+		/*background: palegreen;*/
+		font-size:30px;
+		color: #ccc;
+		cursor: pointer;
+		line-height:28px;
+		text-align: center;
+		float: left;
+		border-left: 1px solid #000;
+	}
+	.del_btnbox{
+		width:16.5%;
+		height: 100%;
+		/*background: palegreen;*/
+		font-size:30px;
+		color: #ccc;
+		cursor: pointer;
+		line-height:28px;
+		text-align: center;
+		float: left;
+		border-left: 1px solid #000;
+		border-right: 1px solid #000;
+	}
+	 table{
+		width: 1000px;
+		height: auto;
+		border: 1px solid #000;
+		margin:0 auto;
+		border-collapse: collapse;
+		border-top: none;
+	}
+	h1{
+		text-align: center;
+		padding-top: 10px;
+	}
+	.titlbox{
+		width: 100%;
+		height: 40px;
+		border-bottom: 1px solid #000;
+	}
+	 .titlbox>div{
+	 	float: left;
+		height: 40px;
+		width: 16.64%;
+		text-align: center;
+		border-left: 1px solid #000;
+		border-top: 1px solid #000;
+		box-sizing: border-box;
+		line-height: 40px;
+	}
+	.titlbox>div:last-child{
+		width: 16.8%;
+		border-right: 1px solid #000;
+	}
+	table tr td{
+		height: 40px;
+		width: 16.66%;
+		border: 1px solid #000;
+		border-top:none;
+
+	} 
+	.gold{
+		background: gold;
+	}
+	.biaoge_box{
+		position: relative;
+	}
+    .xiugai{
+    	width: 100%;
+    	height: 100%;
+    	border: none;
+    	display: none;
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    }

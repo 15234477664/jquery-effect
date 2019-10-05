@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>WUIF1611</title>
+		<script src='jquery.js'></script>
+	</head>
+	<style>
+		.box {
+			/*width:1000px;*/
+			/*height:600px;*/
+			background: #020202;
+			padding: 20px;
+			box-sizing: border-box;
+			text-align: center;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			right: 0;
+			margin: auto;
+		}
+		
+		h1 {
+			color: #fff;
+		}
+		
+		.botton {
+			width: 300px;
+			height: 80px;
+			position: absolute;
+			right: 0;
+			bottom: 40px;
+		}
+		
+		.start {
+			width: 100px;
+			height: 50px;
+			background: #ADFF2E;
+			opacity: 0.6;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 10px;
+		}
+		
+		.stop {
+			width: 100px;
+			height: 50px;
+			background: #ADFF2E;
+			opacity: 0.6;
+			border-radius: 5px;
+			margin: 10px;
+			cursor: pointer;
+		}
+		
+		.name {
+			width: 100px;
+			height: 50px;
+			background: #cdcdcd;
+			margin: 20px;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			color: #fff;
+		}
+		
+		.list {
+			background: #7808e0;
+		}
+		
+		.block {
+			width: 500px;
+			height: 300px;
+			background: #2C3E50;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			right: 0;
+			margin: auto;
+			z-index: 99999;
+			border-radius: 10px;
+			padding: 20px;
+			font-size: 100px;
+			color: #fff;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 260px;
+			/*display: none;*/
+			transition: all .8s ease;
+		}
+	</style>
+
+	<body>
+		<div class="box">
+			<h1>WUIF1611</h1>
+			<div class="botton">
+				<button class="start" value=''>開始</button>
+				<button class="stop" value=''>停止</button>
+			</div>
+			<div class="block">到你咯！</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	$(function() {
+		var box = $('.box');
+		var all = ['孙勇华', '刘天华', '赵东升', '李勇', '马慧', '赵休彪', '霍宇宁', '郝宇帆', '史文飞', '李鑫', '郭建龙', '于渊', '武志婧', '包欣', '苏聪', '刘文兵', '梁祥君', '孙小军', '丁宇', '任黎敏', '贾涛', '白晓君', '周凯', '芦吉祥', '赵泽丽', '葛英小', '王华哲', '李亚东', '大王伟', '张锐', '刘旭辉', '王磊', '郝晓树', '王宣', '宁丽杰', '高翔', '小王伟', '王旭梅', '何苗青', '王雅蓉'];
+		if(localStorage.arr) {
+			var arr = JSON.parse(localStorage.arr);
+		} else {
+			var arr = all;
+		}
+		for(var i = 0; i < all.length; i++) {
+			var div = $("<div>");
+			if($.inArray(all[i], arr) !== -1) {
+				div.addClass('name free');
+			} else {
+				div.addClass('name');
+			}
+			div.html(all[i]);
+			box.append(div);
+		}
+
+		function save() {
+			localStorage.arr = JSON.stringify(arr);
+		}
+
+		function clear() {
+			localStorage.clear();
+		}
+		$('.start').on('click', function() {
+			$('.list').removeClass('list');
+			$('.block').css({ "transform": "scale(0)" });
+			run();
+			if(arr.length == 0) {
+				clear();
+			}
+		})
+		$('.stop').on('click', function() {
+			clearInterval(t);
+			$('.block').css({"transform": "scale(1)" });
+			$('.block').html($('.list').html());
+			arr.splice(random, 1);
+			$('.list').removeClass('free');
+			save();
+			console.log(arr.length)
+			console.log($('.free').length)
+		})
+		//動態創建 
+		function run() {
+			t = setInterval(function() {
+				$(".free").removeClass('list'); //清除其餘動態樣式
+				random = Math.floor(Math.random() * $('.free').length);
+				$('.free').eq(random).addClass('list');
+			}, 100);
+		}
+
+	})
+</script>

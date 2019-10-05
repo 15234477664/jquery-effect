@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>滚轮事件</title>
+	<link rel="stylesheet" href="public.css">;
+	<script src="function.js"></script>
+	<script>
+	window.onload=function(){
+		var dabox=$(".dabox")[0];
+		if(dabox.addEventListener){
+           dabox.addEventListener("mousewheel",scroll,false);//谷歌中添加滚轮事件
+           dabox.addEventListener("DOMMouseScroll",scroll,false)//火狐中添加滚轮事件
+		}else{
+		  dabox.attachEvent("onmousewheel",scroll);//IE中添加滚轮事件
+		}
+		function scroll(e){
+			ev=e||document.event;
+			if(ev.preventDefault){
+               ev.preventDefault();//火狐，谷歌中阻止浏览器的默认动作
+			}else{
+				ev.returnValue=false;//IE中阻止浏览器的默认动作
+			}
+			var width=dabox.offsetWidth;
+			var height=dabox.offsetHeight;
+			var direction=ev.detail||ev.wheelDelta;//ie||火狐，谷歌
+			if(direction==120||direction==-3){//判断滚轮向上的条件
+             up.call(dabox);//call改变指针方向
+			}
+			if(direction==-120||direction==3){
+             down.call(dabox);
+			}
+			function up(){
+				this.style.background="yellow";
+				this.style.width=width+10+"px";
+				this.style.height=height+10+"px";
+			}
+			function down(){
+				var w=dabox.offsetWidth;
+			    var h=dabox.offsetHeight;
+				this.style.background="green";
+				this.style.width=w-5+"px";
+				this.style.height=h-5+"px";
+			}
+		}
+
+	}
+	</script>
+</head>
+<style>
+	.dabox{
+		width: 300px;
+		height: 300px;
+		background: blue;
+		margin: 0 auto;
+	}
+</style>
+<body>
+	<div class="dabox"></div>
+</body>
+</html>

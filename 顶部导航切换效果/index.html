@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery首页产品分类手风琴代码 - xw素材网</title>
+<link type="text/css"  rel="stylesheet" href="css/base.css" />
+<link type="text/css" rel="stylesheet" href="css/main.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+<div class="indexTypes">
+   <ul>
+	   <li class="current">
+		   <div class="title">
+			   <h2>产品分类</h2>
+			   <a href="">****系列</a>
+		   </div>
+		   <div class="con fl" id="con11">
+			   <ul>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+			   </ul>
+		   </div>
+	   </li>
+	   <li>
+		   <div class="title">
+			   <h2>产品分类</h2>
+			   <a href="">****系列</a>
+		   </div>
+		   <div class="con fl" id="con22">
+			   <ul>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+			   </ul>
+		   </div>
+	   </li>
+	   <li>
+		   <div class="title">
+			   <h2>产品分类</h2>
+			   <a href="">*****系列</a>
+		   </div>
+		   <div class="con fl" id="con33">
+			   <ul>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+				   <li><a href="">产品分类名称</a></li>
+			   </ul>
+		   </div>
+	   </li>
+	   <div class="clear"></div>
+   </ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	var currentLi =  $(".indexTypes ul li");
+	$(currentLi.eq(0)).stop().animate({"width":"510px"},600);
+	$(currentLi.eq(0)).children(".con").animate({"left":"193px"},600);
+	$(currentLi).hover(function(e){
+		$(this).siblings("li").stop().animate({"width":"193px"},600);
+		$(this).siblings("li").removeClass("current");
+		$(this).addClass("current");
+		$(this).stop().animate({"width":"510px"},600);  
+	});
+});
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗.</p>
+<p>来源：<a href="http://www.xwcms.net/" target="_blank">xw素材网</a></p>
+</div>
+</body>
+</html>

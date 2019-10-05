@@ -1,0 +1,48 @@
+$(document).ready(function(){
+    /*********************************************************************通过添加**************************************************************/
+    //添加
+    $(".add_btnbox").click(function(){
+        $(".table_box").append("<tr><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td><td class=\"biaoge_box\"><span class='number'></span><input type='text' class='xiugai'/></td></tr>");
+        //选中当前
+        $("tr").click(function(e){
+            $("tr").removeClass("gold");
+            $(this).addClass("gold");
+        });
+        //删除
+        $(".del_btnbox").click(function(){
+            $(".gold").hide();
+        });
+        //修改
+        $(".biaoge_box").click(function(){
+            $(this).children(".xiugai").show();
+            $(this).children(".xiugai").focus();
+        });
+        $(".xiugai").blur(function(){
+            var vals=$(this).val();
+            console.log(vals);
+            $(this).hide();
+            $(this).prev().html(vals)
+        })
+    });
+    /*********************************************************************不是通过添加**************************************************************/
+    //选中当前
+    $("tr").click(function(e){
+        $("tr").removeClass("gold");
+        $(this).addClass("gold");
+    });
+    //删除
+    $(".del_btnbox").click(function(){
+        $(".gold").hide();
+    });
+    //修改
+    $(".biaoge_box").click(function(){
+        $(this).children(".xiugai").show();
+        $(this).children(".xiugai").focus();
+    });
+    $(".xiugai").blur(function(){
+        var vals=$(this).val();
+        console.log(vals);
+        $(this).hide();
+        $(this).prev().html(vals)
+    })
+})

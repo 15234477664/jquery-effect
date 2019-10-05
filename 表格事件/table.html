@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>学生管理系统</title>
+	<script src="function.js"></script>
+</head>
+<style>
+	 *{
+		padding:0;
+		margin:0;
+		list-style: none;
+	} 
+	.box{
+		width: 1000px;
+		height: auto;
+		margin:0 auto;
+		text-align: center;
+		border-collapse: collapse;
+
+	}
+	 table{
+		width: 1000px;
+		height: auto;
+		border: 1px solid #000;
+		margin:0 auto;
+		border-collapse: collapse;
+	}
+	h1{
+		text-align: center;
+		padding-top: 10px;
+	}
+	
+	 table tr th{
+		height: 40px;
+		width: 20%;
+		border: 1px solid #000;
+	}
+	table tr td{
+		height: 40px;
+		width: 20%;
+		border: 1px solid #000;
+
+	} 
+	.add{
+		width: 998px;
+		height: 40px;
+		margin: 0 auto;
+		border: 1px solid #ccc;
+		line-height: 40px;
+		font-size: 50px;
+		color: #ccc;
+		cursor: pointer;
+
+	}
+	.del{
+		line-height: 40px;
+		font-size: 50px;
+		color: #ccc;
+		cursor: pointer;
+
+	}
+</style>
+<script>
+	$(function(){
+		var add=$(".add")[0];
+		var table=$("table")[0];
+		var tbody=$("tbody",table)[0];
+		add.onclick=function(){
+            var tr=$("<tr>");
+            tr.innerHTML="<td></td><td></td><td></td><td></td><td><div class='del'>-</div></td>";
+            tbody.appendChild(tr);
+		}
+	    table.onclick=function(e){
+	    	var ev=e||window.event;
+	    	var obj=ev.target||ev.srcElement;
+
+	    	if(obj.className=="del"){
+	    		var parobj=obj.parentNode.parentNode;
+	    		tbody.removeChild(parobj);
+
+	    	}else if(obj.nodeName=="TD"&&getChilds(obj).length==0){
+                var val=obj.innerHTML
+                var input=$("<input>");
+                input.style.width="100%";
+                input.style.height="100%";
+                input.value=val;
+                obj.innerHTML="";
+                obj.appendChild(input);
+
+                input.onblur=function(){
+                	var value=this.value;
+                	if(value==""){
+                		obj.innerHTML=val;
+                	}else{
+                		obj.innerHTML=value;
+
+                	}
+	    	    }
+	    	}
+	    }
+	})
+</script>
+<body>
+	<div class="box">
+		
+		<h1>学生管理系统</h1>
+		<table cellspacing="0" cellpadding="0">
+
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>张三</td>
+				<td>18</td>
+				<td>男</td>
+				<td><div class="del">-</div></td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>张三</td>
+				<td>18</td>
+				<td>男</td>
+				<td><div class="del">-</div></td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>张三</td>
+				<td>18</td>
+				<td>男</td>
+				<td><div class="del">-</div></td>
+			</tr>
+		</table>
+			<div class="add">+</div>
+
+	</div>
+	
+</body>
+</html>
